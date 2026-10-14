@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية ارْتَقِ | لعلوم القرآن الكريم والتجويد والإتقان</title>
+    
+    <!-- الخطوط العربية: الأميري وتجوال -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- مكتبة الأيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-deep: #060b08;
+            --bg-surface: #0c1611;
+            --bg-card: #122119;
+            --bg-card-hover: #192e23;
+            --emerald: #0fa968;
+            --emerald-glow: rgba(15, 169, 104, 0.35);
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #aa771c 100%);
+            --text-primary: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-islamic: rgba(212, 175, 55, 0.22);
+            --border-emerald: rgba(15, 169, 104, 0.2);
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.8;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(15, 169, 104, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 100% 100%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.025' fill-rule='evenodd'%3E%3Cpath d='M30 0l15 15-15 15L15 15zM0 30l15 15-15 15-15-15zM60 30l15 15-15 15-15-15zM30 60l15 15-15 15-15-15z'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+
+        h1, h2, h3, .quran-font {
+            font-family: 'Amiri', serif;
+        }
+
+        /* الإطار والزخرفة العلوية */
+        .islamic-border-top {
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), var(--emerald), var(--gold), transparent);
+            width: 100%;
+        }
+
+        /* شريط التنقل */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            background: rgba(6, 11, 8, 0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-islamic);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .brand-emblem {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1.5px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.25rem;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .brand-title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title .main-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--gold-light);
+            line-height: 1.2;
+        }
+
+        .brand-title .sub-name {
+            font-size: 0.75rem;
+            color: var(--emerald);
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+
+        .btn-register-top {
+            background: var(--gold-gradient);
+            color: #060b08;
+            font-weight: 700;
+            padding: 0.65rem 1.4rem;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn-register-top:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4.5rem 1.5rem;
+        }
+
+        /* واجهة الترحيب (Hero) */
+        .hero {
+            text-align: center;
+            padding: 5rem 1.5rem 3.5rem;
+            position: relative;
+        }
+
+        .basmalah {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.35rem 1.2rem;
+            border-radius: 30px;
+            background: rgba(15, 169, 104, 0.1);
+            border: 1px solid var(--emerald);
+            color: var(--emerald);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero-verse {
+            font-size: 1.25rem;
+            color: var(--gold-light);
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.9;
+            position: relative;
+            padding: 10px 20px;
+        }
+
+        .hero p.lead-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 780px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-main {
+            background: var(--gold-gradient);
+            color: #060b08;
+            font-size: 1.1rem;
+            font-weight: 800;
+            padding: 0.9rem 2.2rem;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-cta-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-islamic);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* العناوين المزخرفة */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        .section-header .section-tag {
+            color: var(--emerald);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.3rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+
+        .decorative-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 0.5rem auto 1rem;
+        }
+
+        .decorative-divider span {
+            height: 1px;
+            width: 70px;
+            background: var(--border-islamic);
+        }
+
+        .decorative-divider i {
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        /* مسار المستويات التدريجي وصولاً للمفصل والكامل */
+        .levels-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.6rem;
+        }
+
+        .level-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-islamic);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .level-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 3px;
+            background: var(--border-islamic);
+            transition: var(--transition);
+        }
+
+        .level-box:hover {
+            transform: translateY(-7px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.15);
+        }
+
+        .level-box:hover::before {
+            background: var(--gold-gradient);
+        }
+
+        /* تمييز المستوى النهائي (القرآن كاملاً) */
+        .level-box.master-level {
+            background: linear-gradient(145deg, #122119 0%, #1a3225 100%);
+            border: 1.5px solid var(--gold);
+            box-shadow: 0 8px 30px rgba(15, 169, 104, 0.15);
+        }
+
+        .level-box.master-level::before {
+            background: var(--gold-gradient);
+            height: 4px;
+        }
+
+        .level-number-badge {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border-islamic);
+            background: rgba(6, 11, 8, 0.7);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .level-box.master-level .level-number-badge {
+            background: var(--gold);
+            color: #060b08;
+            border: none;
+        }
+
+        .level-box h3 {
+            font-size: 1.45rem;
+            margin-bottom: 0.6rem;
+            color: #fff;
+        }
+
+        .level-target {
+            color: var(--emerald);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: rgba(15, 169, 104, 0.08);
+            padding: 3px 10px;
+            border-radius: 6px;
+        }
+
+        .level-box p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 1.4rem;
+        }
+
+        .level-list {
+            list-style: none;
+            font-size: 0.88rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .level-list li {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #e2e8f0;
+        }
+
+        .level-list li i {
+            color: var(--gold);
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        /* قسم المتابعة والاختبارات */
+        .features-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .feature-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-emerald);
+            border-radius: var(--radius-lg);
+            padding: 2.2rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            border-color: var(--emerald);
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+        }
+
+        .feature-icon-wrapper {
+            width: 54px;
+            height: 54px;
+            background: rgba(15, 169, 104, 0.12);
+            border: 1px solid var(--emerald);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--emerald);
+            font-size: 1.5rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.35rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+
+        /* اختبار تجويدي تقييمي تفاعلي */
+        .interactive-quiz {
+            background: var(--bg-surface);
+            border: 1.5px solid var(--border-islamic);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2rem;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+        }
+
+        .quiz-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-q-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-option-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1.1rem 1.4rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-primary);
+        }
+
+        .quiz-option-btn:hover {
+            border-color: var(--emerald);
+            background: rgba(15, 169, 104, 0.1);
+            transform: translateX(-4px);
+        }
+
+        .quiz-result-box {
+            display: none;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        /* نافذة التقديم والأرقام (MODAL) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-card {
+            background: #0d1a13;
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 600px;
+            padding: 2.5rem 2rem;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.2);
+            text-align: center;
+            animation: modalPop 0.3s ease-out;
+        }
+
+        @keyframes modalPop {
+            from { transform: scale(0.92); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close-modal-btn {
+            position: absolute;
+            top: 18px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-islamic);
+            color: var(--text-muted);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .close-modal-btn:hover {
+            color: #fff;
+            background: #e11d48;
+            border-color: #e11d48;
+        }
+
+        .modal-card h2 {
+            font-size: 2rem;
+            color: var(--gold-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-card p.subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .gender-selection-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .gender-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-islamic);
+            border-radius: var(--radius-md);
+            padding: 1.6rem 1.2rem;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .gender-card.boys {
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .gender-card.boys:hover {
+            border-color: #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .gender-card.girls {
+            border-color: rgba(244, 114, 182, 0.3);
+        }
+        .gender-card.girls:hover {
+            border-color: #f472b6;
+            box-shadow: 0 0 20px rgba(244, 114, 182, 0.2);
+        }
+
+        .gender-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .gender-card.boys .gender-icon {
+            background: rgba(56, 189, 248, 0.12);
+            color: #38bdf8;
+        }
+
+        .gender-card.girls .gender-icon {
+            background: rgba(244, 114, 182, 0.12);
+            color: #f472b6;
+        }
+
+        .gender-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.3rem;
+            color: #fff;
+        }
+
+        .phone-display {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            direction: ltr;
+            margin: 0.7rem 0 1.2rem;
+            color: var(--gold-light);
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            border: 1px dashed rgba(212, 175, 55, 0.3);
+            width: 100%;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: #fff;
+            padding: 0.65rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp:hover {
+            background: #1eb757;
+        }
+
+        .btn-call {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            padding: 0.55rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .btn-call:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* التذييل */
+        footer {
+            border-top: 1px solid var(--border-islamic);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            background: #040805;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .gender-selection-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="islamic-border-top"></div>
+
+    <!-- شريط التنقل العلوي -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="brand">
+                <div class="brand-emblem">
+                    <i class="fa-solid fa-quran"></i>
+                </div>
+                <div class="brand-title">
+                    <span class="main-name">أكاديمية ارْتَقِ</span>
+                    <span class="sub-name">لِعُلُومِ القُرْآنِ والتَّجْوِيد</span>
+                </div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#about">عن الأكاديمية</a></li>
+                <li><a href="#levels">خطة المستويات</a></li>
+                <li><a href="#testing">نظام التقييم</a></li>
+                <li><a href="#quick-test">تحديد المستوى</a></li>
+            </ul>
+
+            <button class="btn-register-top" onclick="openEnrollmentModal()">
+                <i class="fa-solid fa-file-pen"></i> التقديم والتسجيل
+            </button>
+        </div>
+    </header>
+
+    <!-- واجهة الترحيب الإسلامية المهيبة -->
+    <section class="hero" id="about">
+        <div class="basmalah quran-font">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</div>
+        <div class="hero-badge">
+            <i class="fa-solid fa-award"></i>
+            منهج تأصيلي من التأسيس إلى تمام الختم
+        </div>
+
+        <h1>أكاديمية <span>ارْتَقِ</span> لتعليم القرآن الكريم</h1>
+        
+        <div class="hero-verse quran-font">
+            «يُقَالُ لِصَاحِبِ الْقُرْآنِ: اقْرَأْ وَارْتَقِ وَرَتِّلْ كَمَا كُنْتَ تُرَتِّلُ فِي الدُّنْيَا، فَإِنَّ مَنْزِلَتَكَ عِنْدَ آخِرِ آيَةٍ تَقْرَؤُهَا»
+        </div>
+
+        <p class="lead-text">
+            نظام قرآني تعليمي متدرج يأخذ بيدك خطوة بخطوة؛ يبدأ بتصحيح مخارج الحروف، وينتقل بك عبر سور المفصل (قصاره، ووسطه، وطواله)، وصولاً للمستوى المتكامل لحفظ كتاب الله كاملاً بأحكام التجويد والإتقان.
+        </p>
+
+        <div class="hero-actions">
+            <button class="btn-cta-main" onclick="openEnrollmentModal()">
+                <i class="fa-solid fa-kaaba"></i> انضم للأكاديمية والتقديم
+            </button>
+            <a href="#levels" class="btn-cta-secondary">
+                <i class="fa-solid fa-list-check"></i> استكشف المستويات
+            </a>
+        </div>
+    </section>
+
+    <!-- نظام المستويات التعليمية التدريجية -->
+    <section class="container" id="levels">
+        <div class="section-header">
+            <span class="section-tag">التدرج العلمي الرصين</span>
+            <h2>خريطة المستويات القرآنية</h2>
+            <div class="decorative-divider">
+                <span></span>
+                <i class="fa-solid fa-star-and-crescent"></i>
+                <span></span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">منهج علمي مدروس ينقلك بأمان وإتقان من نطق الحرف حتى ختم المصحف الشريف</p>
+        </div>
+
+        <div class="levels-container">
+            <!-- المستوى 1: التأسيس -->
+            <div class="level-box">
+                <div>
+                    <div class="level-number-badge">١</div>
+                    <h3>المستوى التأسيسي</h3>
+                    <span class="level-target">ضبط النطق والتلاوة الصحيحة</span>
+                    <p>العناية بفك اللسان وضبط الحركات الإعرابية ومخارج الحروف وصفاتها الأولية من دون تعقيد.</p>
+                    <ul class="level-list">
+                        <li><i class="fa-solid fa-check-double"></i> تصحيح مخارج الحروف الشائعة اللحن</li>
+                        <li><i class="fa-solid fa-check-double"></i> تطبيق أحكام البسملة والاستعاذة والمد الطبيعي</li>
+                        <li><i class="fa-solid fa-check-double"></i> التلاوة الخالية من اللحن الجلي</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- المستوى 2: قصار المفصل -->
+            <div class="level-box">
+                <div>
+                    <div class="level-number-badge">٢</div>
+                    <h3>قصار المفصل</h3>
+                    <span class="level-target">من سورة الضحى إلى الناس</span>
+                    <p>الانتقال للتطبيق العملي لأحكام التجويد التأسيسية وترسيخ محفوظ قصار السور بإتقان تام.</p>
+                    <ul class="level-list">
+                        <li><i class="fa-solid fa-check-double"></i> إتقان أحكام النون الساكنة والتنوين كاملاً</li>
+                        <li><i class="fa-solid fa-check-double"></i> حفظ ومراجعة السور مع الترتيل المتأني</li>
+                        <li><i class="fa-solid fa-check-double"></i> تصحيح أداء الغنن وضبط مراتب القلقلة</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- المستوى 3: أوساط المفصل -->
+            <div class="level-box">
+                <div>
+                    <div class="level-number-badge">٣</div>
+                    <h3>أوساط المفصل</h3>
+                    <span class="level-target">من سورة النبأ إلى الليل</span>
+                    <p>التدريب على النفس الطويل وترسيخ أحكام المدود المتنوعة ومخارج الحروف مع سور جزأي عم وتبارك.</p>
+                    <ul class="level-list">
+                        <li><i class="fa-solid fa-check-double"></i> ضبط المد المتصل والمنفصل واللازم والعارض</li>
+                        <li><i class="fa-solid fa-check-double"></i> دراسة أحكام الميم الساكنة وأحكام الراءات</li>
+                        <li><i class="fa-solid fa-check-double"></i> التسميع التراكمي وتثبيت أوائل السور وأواخرها</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- المستوى 4: طوال المفصل -->
+            <div class="level-box">
+                <div>
+                    <div class="level-number-badge">٤</div>
+                    <h3>طوال المفصل</h3>
+                    <span class="level-target">من سورة الحجرات إلى سورة عمّ</span>
+                    <p>الارتقاء لجودة الأداء القرآني مع دراسة عملية لقواعد الوقف والابتداء والترتيل المنهجي.</p>
+                    <ul class="level-list">
+                        <li><i class="fa-solid fa-check-double"></i> معرفة علامات المصحف وضوابط الوقف التام والكافي</li>
+                        <li><i class="fa-solid fa-check-double"></i> إتقان سور المفصل كاملة سرداً ومراجعةً</li>
+                        <li><i class="fa-solid fa-check-double"></i> دراسة تطبيقية منظومة (تحفة الأطفال)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- المستوى 5: الجامع الشامل (القرآن كاملاً) -->
+            <div class="level-box master-level" style="grid-column: 1 / -1;">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <span class="level-number-badge"><i class="fa-solid fa-crown"></i></span>
+                        <span style="background: var(--gold); color: #060b08; font-weight: 800; font-size: 0.8rem; padding: 4px 12px; border-radius: 20px;">
+                            المسار الشامل والختم
+                        </span>
+                    </div>
+                    <h3 style="font-size: 1.8rem; color: var(--gold-light);">المستوى الجامع: الأساسيات المتكاملة وحفظ القرآن كاملاً</h3>
+                    <span class="level-target" style="background: rgba(212,175,55,0.15); color: var(--gold);">
+                        تثبيت الأجزاء الـ ٣٠ كاملة مع الرسوخ التجويدي
+                    </span>
+                    <p style="max-width: 900px; font-size: 1rem;">
+                        المستوى الأرفع في أكاديمية ارْتَقِ؛ صُمم للراغبين في تتويج مسيرتهم بحفظ القرآن كاملاً أو تثبيت محفوظهم القديم، مع استيعاب كافة القواعد التجويدية، ودراسة المتون، وجرد الأحزاب عبر حلقات متخصصة بإشراف مشايخ ومعلمات متقنين.
+                    </p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                        <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid rgba(212,175,55,0.2);">
+                            <strong style="color: var(--gold); display: block; margin-bottom: 5px;"><i class="fa-solid fa-scroll"></i> الجمع المنهجي:</strong>
+                            سرد الحفظ الجديد مع مراجعة الماضي القريب والبعيد دون انقطاع.
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid rgba(212,175,55,0.2);">
+                            <strong style="color: var(--gold); display: block; margin-bottom: 5px;"><i class="fa-solid fa-scale-balanced"></i> التجويد الشامل:</strong>
+                            دراسة مخارج وصفات ابن الجزري والتمكين من دقائق التجويد.
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid rgba(212,175,55,0.2);">
+                            <strong style="color: var(--gold); display: block; margin-bottom: 5px;"><i class="fa-solid fa-certificate"></i> الختمة والإجازة:</strong>
+                            إعداد الطالب لاجتياز اختبارات الختم والإجازة المتصلة بالسند.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نظام المتابعة والاختبارات الدقيقة -->
+    <section class="container" id="testing" style="padding-top: 0;">
+        <div class="section-header">
+            <span class="section-tag">القياس والتحفيز</span>
+            <h2>نظام المتابعة والاختبارات الدورية</h2>
+            <div class="decorative-divider">
+                <span></span>
+                <i class="fa-solid fa-star-and-crescent"></i>
+                <span></span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">نظام اختبار موضوعي يضمن عدم ترحيل أي نقص في الحفظ أو اللحن في الأحكام</p>
+        </div>
+
+        <div class="features-wrapper">
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <i class="fa-solid fa-headphones-simple"></i>
+                </div>
+                <h3>عرض وتسميع أسبوعي منتظم</h3>
+                <p>جلسة فردية مع المعلم أو المعلمة لسرد الورد الأسبوعي الجديد، ومراجعة المحفوظ السابق مع تصحيح مباشر ولحظي لأي التباس.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <h3>اختبارات نهاية كل مستوى</h3>
+                <p>لا ينتقل الطالب من مرحلة المفصل إلى التي تليها إلا بعد اجتياز تقييم شفهي في الاستحضار والأحكام، لضمان متانة الحفظ.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+                <h3>سجل الطالب الإتقاني</h3>
+                <p>تقرير رقمي يوثق درجات التسميع، الملاحظات الأدائية على مخارج الحروف، ونسب إنجاز الأوراد ليبقى الطالب وولي أمره على بينة تامة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- اختبار تقييم ذاتي سريع -->
+    <section class="container" id="quick-test" style="padding-top: 0;">
+        <div class="interactive-quiz">
+            <div class="quiz-title">
+                <span style="color: var(--gold); font-size: 0.85rem; font-weight: 700;">تقييم تقريبي ذاتي</span>
+                <h3 style="font-size: 1.8rem; margin-top: 5px;">أين تضع نفسك في أكاديمية ارْتَقِ؟</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">اختر الحالة الأقرب لوضعك الحالي لمعرفة المستوى المقترح</p>
+            </div>
+
+            <div id="quizQuestionBox">
+                <div class="quiz-q-text">ما هو وضع قراءتك وحفظك الحالي؟</div>
+                <div class="quiz-option-btn" onclick="selectEvaluation(1)">
+                    <i class="fa-regular fa-circle-dot"></i>
+                    <span>أريد تصحيح قراءتي من المصحف ومعرفة مخارج الحروف ونطقها الصحيح.</span>
+                </div>
+                <div class="quiz-option-btn" onclick="selectEvaluation(2)">
+                    <i class="fa-regular fa-circle-dot"></i>
+                    <span>أقرأ قراءة سليمة وأحفظ قصار السور، لكن أحتاج لضبط الغنن والمدود والأحكام.</span>
+                </div>
+                <div class="quiz-option-btn" onclick="selectEvaluation(3)">
+                    <i class="fa-regular fa-circle-dot"></i>
+                    <span>أحفظ سور المفصل أو أجزاء متفرقة وأريد خطة لضبط الحفظ والوصول لختم القرآن كاملاً.</span>
+                </div>
+            </div>
+
+            <div class="quiz-result-box" id="quizResultBox">
+                <i class="fa-solid fa-circle-check" style="font-size: 3rem; color: var(--gold); margin-bottom: 1rem;"></i>
+                <h4 id="evalResultTitle" style="font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem;"></h4>
+                <p id="evalResultText" style="color: var(--text-muted); margin-bottom: 1.5rem;"></p>
+                <button class="btn-cta-main" onclick="openEnrollmentModal()" style="margin: auto;">
+                    قدم الآن في هذا المستوى
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <div class="brand" style="justify-content: center; margin-bottom: 1rem;">
+            <div class="brand-emblem"><i class="fa-solid fa-quran"></i></div>
+            <span class="main-name" style="font-size: 1.3rem; color: var(--gold-light);">أكاديمية ارْتَقِ</span>
+        </div>
+        <p>قال رسول الله ﷺ: «خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ»</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #64748b;">جميع الحقوق محفوظة &copy; أكاديمية ارْتَقِ</p>
+    </footer>
+
+    <!-- نافذة منبثقة تفاعلية للتقديم والتسجيل (الأرقام المحددة للبنين والبنات) -->
+    <div class="modal-overlay" id="enrollmentModal">
+        <div class="modal-card">
+            <button class="close-modal-btn" onclick="closeEnrollmentModal()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div style="color: var(--gold); font-size: 2.2rem; margin-bottom: 0.5rem;">
+                <i class="fa-solid fa-mosque"></i>
+            </div>
+            <h2>التقديم في أكاديمية ارْتَقِ</h2>
+            <p class="subtitle">اختر القسم المناسب للتواصل المباشر وبدء تحديد موعد اختبار المقابلة:</p>
+
+            <div class="gender-selection-grid">
+                
+                <!-- قسم الأولاد / البنين -->
+                <div class="gender-card boys">
+                    <div>
+                        <div class="gender-icon">
+                            <i class="fa-solid fa-child"></i>
+                        </div>
+                        <h4>قسم البنين / الأولاد</h4>
+                        <span style="font-size: 0.8rem; color: #38bdf8;">حلقات مخصصة للذكور</span>
+                    </div>
+
+                    <div class="phone-display">01270223881</div>
+
+                    <div class="contact-links">
+                        <a href="https://wa.me/201270223881?text=السلام%20عليكم،%20أرغب%20في%20التسجيل%20بأكاديمية%20ارتقِ%20(قسم%20البنين)" target="_blank" class="btn-whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i> تواصل عبر واتساب
+                        </a>
+                        <a href="tel:01270223881" class="btn-call">
+                            <i class="fa-solid fa-phone"></i> اتصال مباشر
+                        </a>
+                    </div>
+                </div>
+
+                <!-- قسم البنات / الإناث -->
+                <div class="gender-card girls">
+                    <div>
+                        <div class="gender-icon">
+                            <i class="fa-solid fa-child-dress"></i>
+                        </div>
+                        <h4>قسم البنات / الفتيات</h4>
+                        <span style="font-size: 0.8rem; color: #f472b6;">حلقات مخصصة مع معلمات مجازات</span>
+                    </div>
+
+                    <div class="phone-display">01018254967</div>
+
+                    <div class="contact-links">
+                        <a href="https://wa.me/201018254967?text=السلام%20عليكم،%20أرغب%20في%20التسجيل%20بأكاديمية%20ارتقِ%20(قسم%20البنات)" target="_blank" class="btn-whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i> تواصل عبر واتساب
+                        </a>
+                        <a href="tel:01018254967" class="btn-call">
+                            <i class="fa-solid fa-phone"></i> اتصال مباشر
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <p style="font-size: 0.82rem; color: var(--text-muted);">
+                <i class="fa-solid fa-shield-halved" style="color: var(--emerald);"></i> خصوصية تامة وفصل كامل بين حلقات البنين والبنات.
+            </p>
+        </div>
+    </div>
+
+    <!-- المنطق البرمجي السلس للنافذة والتقييم -->
+    <script>
+        // فتح وإغلاق نافذة التقديم والأرقام
+        function openEnrollmentModal() {
+            const modal = document.getElementById('enrollmentModal');
+            modal.classList.add('active');
+        }
+
+        function closeEnrollmentModal() {
+            const modal = document.getElementById('enrollmentModal');
+            modal.classList.remove('active');
+        }
+
+        // إغلاق النافذة عند النقر في المساحة الفارغة
+        window.onclick = function(event) {
+            const modal = document.getElementById('enrollmentModal');
+            if (event.target === modal) {
+                closeEnrollmentModal();
+            }
+        };
+
+        // التقييم السريع لتحديد المستوى
+        function selectEvaluation(level) {
+            const questionBox = document.getElementById('quizQuestionBox');
+            const resultBox = document.getElementById('quizResultBox');
+            const title = document.getElementById('evalResultTitle');
+            const text = document.getElementById('evalResultText');
+
+            questionBox.style.display = 'none';
+            resultBox.style.display = 'block';
+
+            if (level === 1) {
+                title.textContent = 'المستوى المقترح: المستوى التأسيسي';
+                text.textContent = 'بدايتك معنا ستكون في ضبط الحركات ومخارج الحروف والتخلص التام من اللحن لتنطلق بعدها بثبات.';
+            } else if (level === 2) {
+                title.textContent = 'المستوى المقترح: مسار قصار وأوساط المفصل';
+                text.textContent = 'ستنطلق فوراً في تطبيق أحكام النون والميم والمدود على سور جزأي عم وتبارك مع ترسيخ التلاوة العذبة.';
+            } else {
+                title.textContent = 'المستوى المقترح: المسار الشامل لحفظ القرآن كاملاً';
+                text.textContent = 'مرحباً بك في المستوى الجامع؛ خطتك ستعتمد على التسميع المكثف والمراجعة المتصلة وضبط الوقف وإتقان المتون.';
+            }
+        }
+    </script>
+</body>
+</html>
